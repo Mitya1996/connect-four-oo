@@ -1,6 +1,6 @@
 // Make it so that there is a Player class. It should have a constructor that takes a string color name (eg, “orange” or “#ff3366”) and store that on the player instance.
 
-document.getElementById('button').addEventListener('click',()=>{
+document.getElementById('button').addEventListener('click', ()=> {
   const input1 = document.getElementById('p1');
   const input2 = document.getElementById('p2');
 
@@ -8,16 +8,16 @@ document.getElementById('button').addEventListener('click',()=>{
 
   let p1 = new Player(input1.value)
   let p2 = new Player(input2.value)
-  new Game(p1,p2);
+  new Game(p1, p2);
 })
 
-class Player{
-  constructor(color){
+class Player {
+  constructor(color) {
     this.color = color;
   }
 }
 
-class Game{
+class Game {
 
   constructor(p1, p2, HEIGHT = 6, WIDTH = 7) {
     this.HEIGHT = HEIGHT;
@@ -94,7 +94,6 @@ class Game{
   placeInTable(y, x) {
     const piece = document.createElement('div');
     piece.classList.add('piece');
-    //piece.classList.add(`p${this.currPlayer}`);
     piece.style.backgroundColor = this.currPlayer.color;
     piece.style.top = -50 * (y + 2);
 
@@ -112,7 +111,7 @@ class Game{
   /** handleClick: handle click of column top to play piece */
 
   handleClick(evt) {
-    if(this.gameOver){
+    if(this.gameOver) {
       return this.endGame(`The game is over! Play again?`);
     }
     // get x from ID of clicked cell
@@ -139,7 +138,7 @@ class Game{
     }
       
     // switch players
-    [this.currPlayer,this.waitingPlayer] = [this.waitingPlayer,this.currPlayer];
+    [this.currPlayer, this.waitingPlayer] = [this.waitingPlayer, this.currPlayer];
   }
 
   /** checkForWin: check board cell-by-cell for "does a win start here?" */
