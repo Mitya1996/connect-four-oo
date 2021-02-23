@@ -7,7 +7,7 @@ class Game{
     this.currPlayer = 1; // active player: 1 or 2
     this.makeBoard();
     this.makeHtmlBoard();
-    //this.gameOver = false;
+    this.gameOver = false;
   }
   /** Connect Four
    *
@@ -86,11 +86,15 @@ class Game{
 
   endGame(msg) {
     alert(msg);
+    this.gameOver = true;
   }
 
   /** handleClick: handle click of column top to play piece */
 
   handleClick(evt) {
+    if(this.gameOver){
+      return this.endGame(`The game is over! Play again?`);
+    }
     // get x from ID of clicked cell
     const x = +evt.target.id;
 
