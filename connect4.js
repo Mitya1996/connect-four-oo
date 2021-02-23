@@ -1,6 +1,6 @@
 // Make it so that there is a Player class. It should have a constructor that takes a string color name (eg, “orange” or “#ff3366”) and store that on the player instance.
 
-document.getElementById('button').addEventListener('click', ()=> {
+document.getElementById('button').addEventListener('click', () => {
   const input1 = document.getElementById('p1');
   const input2 = document.getElementById('p2');
 
@@ -176,5 +176,3 @@ class Game {
   }
 
 }
-
-
