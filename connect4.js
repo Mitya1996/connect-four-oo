@@ -153,5 +153,3 @@ class Game{
   }
 
 }
-
-new Game(6,7);
